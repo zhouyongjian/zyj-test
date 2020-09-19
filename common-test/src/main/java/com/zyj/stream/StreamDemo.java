@@ -24,8 +24,6 @@ public class StreamDemo {
         }).collect(Collectors.toList());
         System.out.println(collect);
 
-
-
         books.stream().filter( book -> {return book.getId()%2 == 0;})
                 .filter( book -> {return book.getPrice() > 24;})
                 .map(book -> { return book.getBookName().toUpperCase();})
