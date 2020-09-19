@@ -6,11 +6,16 @@
         <artifactId>zyj-test</artifactId>
         <groupId>com.zyj</groupId>
         <version>1.0-SNAPSHOT</version>
+
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>common-test</artifactId>
 
-    <artifactId>es-test</artifactId>
-    <packaging>jar</packaging>
-
-
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+        </dependency>
+    </dependencies>
 </project>

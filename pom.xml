@@ -10,8 +10,9 @@
     <modules>
         <module>es-test</module>
         <module>netty-test</module>
+        <module>common-test</module>
     </modules>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <build>
         <plugins>
             <plugin>
