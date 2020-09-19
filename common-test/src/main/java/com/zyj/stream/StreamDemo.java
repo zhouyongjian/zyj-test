@@ -18,18 +18,21 @@ public class StreamDemo {
         Book b4 = new Book(14,"d",  28);
         Book b5 = new Book(16,"e",  26);
         List<Book> books = Arrays.asList(b1, b2, b3,b4,b5);
+        // list -> map
+       books.stream().collect(Collectors.toMap(Book::getBookName, book -> book));
+
 
         List<Integer> collect = books.stream().map(book -> {
             return book.getId()*2;
         }).collect(Collectors.toList());
         System.out.println(collect);
 
-        books.stream().filter( book -> {return book.getId()%2 == 0;})
-                .filter( book -> {return book.getPrice() > 24;})
-                .map(book -> { return book.getBookName().toUpperCase();})
-                .sorted((s1, s2)->{ return  s2.compareTo(s1);})
-                .limit(1)
-                .forEach(System.out::println);
+        books.stream().filter( book -> {return book.getId()%2 == 0;}) // 过滤id是偶数
+                .filter( book -> {return book.getPrice() > 24;}) // 过滤价格 > 24
+                .map(book -> { return book.getBookName().toUpperCase();})// 返回书名字大写
+                .sorted((s1, s2)->{ return  s2.compareTo(s1);}) // 自定义排序
+                .limit(1) // 返回一个
+                .forEach(System.out::println); // sout遍历
 
     }
 
