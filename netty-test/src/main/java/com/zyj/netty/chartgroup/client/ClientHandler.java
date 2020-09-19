@@ -1,4 +1,4 @@
-package com.zyj.demo.netty.chartgroup.client;
+package com.zyj.netty.chartgroup.client;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

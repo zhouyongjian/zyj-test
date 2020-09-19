@@ -1,4 +1,4 @@
-package com.zyj.demo.netty.chartgroup.server;
+package com.zyj.netty.chartgroup.server;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;

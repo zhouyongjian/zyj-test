@@ -1,6 +1,5 @@
-package com.zyj.demo.netty.chartgroup.server;
+package com.zyj.netty.chartgroup.server;
 
-import com.zyj.demo.netty.chartgroup.client.ChatGroupClient;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
