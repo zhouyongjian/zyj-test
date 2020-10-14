@@ -11,6 +11,7 @@
         <module>es-test</module>
         <module>netty-test</module>
         <module>common-test</module>
+        <module>zookeeper-test</module>
     </modules>
     <packaging>pom</packaging>
     <build>
