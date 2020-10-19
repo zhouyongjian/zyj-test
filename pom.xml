@@ -12,7 +12,14 @@
         <module>netty-test</module>
         <module>common-test</module>
         <module>zookeeper-test</module>
+        <module>dis-lock-test</module>
     </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.1.RELEASE</version>
+    </parent>
     <packaging>pom</packaging>
     <build>
         <plugins>
