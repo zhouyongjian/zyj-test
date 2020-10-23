@@ -3,7 +3,6 @@ package com.zyj.dis.config.redis;
 
 import org.redisson.Redisson;
 import org.redisson.config.Config;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.Jedis;
@@ -19,7 +18,7 @@ public class RedisConfig {
     }
 
 //    @Bean
-//    public JedisTemp getJedis(){
+//    public JedisTem getJedis(){
 //        Jedis jedis = new Jedis("127.0.0.1", 6379);
 //        return jedis;
 //    }
