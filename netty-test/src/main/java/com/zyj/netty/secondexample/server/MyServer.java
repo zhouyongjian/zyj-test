@@ -1,4 +1,4 @@
-package com.zyj.demo.secondexample.server;
+package com.zyj.netty.secondexample.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

@@ -1,4 +1,4 @@
-package com.zyj.demo.firstexample;
+package com.zyj.netty.firstexample;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

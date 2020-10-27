@@ -58,7 +58,6 @@ public class ServerHandler extends SimpleChannelInboundHandler<String> {
 
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
-        Channel channel = ctx.channel();
         /**
          * 该方法会将组内多有的channel遍历，并发送消息，不需要自己遍历
          */

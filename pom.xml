@@ -13,6 +13,7 @@
         <module>common-test</module>
         <module>zookeeper-test</module>
         <module>dis-lock-test</module>
+        <module>es-test</module>
     </modules>
 
     <parent>

@@ -1,4 +1,4 @@
-package com.zyj.demo.secondexample.client;
+package com.zyj.netty.secondexample.client;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
