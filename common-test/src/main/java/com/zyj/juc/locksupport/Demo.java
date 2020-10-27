@@ -1,4 +1,4 @@
-package com.zyj.lombok;
+package com.zyj.juc.locksupport;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
