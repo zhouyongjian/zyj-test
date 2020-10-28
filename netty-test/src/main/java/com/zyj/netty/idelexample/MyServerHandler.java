@@ -1,4 +1,4 @@
-package com.zyj.netty.fourthexample;
+package com.zyj.netty.idelexample;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
