@@ -41,6 +41,7 @@ public class NIOServer {
                         channel.read(attachment);
                         System.out.println("msg = " + new String(attachment.array()));
                     }
+                    iterator.remove();
                 }
 
 
