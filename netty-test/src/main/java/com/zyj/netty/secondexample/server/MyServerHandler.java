@@ -20,4 +20,10 @@ public class MyServerHandler extends SimpleChannelInboundHandler<String> {
         cause.printStackTrace();;
         ctx.close();
     }
+
+    @Override
+    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("handlerAdded");
+    }
+
 }
