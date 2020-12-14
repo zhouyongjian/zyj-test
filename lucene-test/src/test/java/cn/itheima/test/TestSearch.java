@@ -1,5 +1,6 @@
 package cn.itheima.test;
 
+import com.zyj.conts.Constants;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
@@ -39,7 +40,7 @@ public class TestSearch {
         Query query = queryParser.parse("华为手机");
 
         //4. 创建Directory目录对象, 指定索引库的位置
-        Directory dir = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory dir = FSDirectory.open(Paths.get(Constants.ES_DIR));
         //5. 创建输入流对象
         IndexReader indexReader = DirectoryReader.open(dir);
         //6. 创建搜索对象
@@ -90,7 +91,7 @@ public class TestSearch {
         Query query = IntPoint.newRangeQuery("price", 100, 1000);
 
         //4. 创建Directory目录对象, 指定索引库的位置
-        Directory dir = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory dir = FSDirectory.open(Paths.get(Constants.ES_DIR));
         //5. 创建输入流对象
         IndexReader indexReader = DirectoryReader.open(dir);
         //6. 创建搜索对象
@@ -159,7 +160,7 @@ public class TestSearch {
 
 
         //4. 创建Directory目录对象, 指定索引库的位置
-        Directory dir = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory dir = FSDirectory.open(Paths.get(Constants.ES_DIR));
         //5. 创建输入流对象
         IndexReader indexReader = DirectoryReader.open(dir);
         //6. 创建搜索对象
@@ -223,7 +224,7 @@ public class TestSearch {
         Query query = multiFieldQueryParser.parse("手机");
 
         //4. 创建Directory目录对象, 指定索引库的位置
-        Directory dir = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory dir = FSDirectory.open(Paths.get(Constants.ES_DIR));
         //5. 创建输入流对象
         IndexReader indexReader = DirectoryReader.open(dir);
         //6. 创建搜索对象

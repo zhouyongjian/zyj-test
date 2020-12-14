@@ -1,5 +1,6 @@
 package com.zyj.service;
 
+import com.zyj.conts.Constants;
 import com.zyj.pojo.ResultModel;
 import com.zyj.pojo.Sku;
 import org.apache.lucene.analysis.Analyzer;
@@ -70,7 +71,7 @@ public class SearchServiceImpl implements SearchService {
          * ====消耗时间为=========324ms
          * ====消耗时间为=========18ms
          */
-        Directory directory = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory directory = FSDirectory.open(Paths.get(Constants.ES_DIR));
         //5. 创建输入流对象
         IndexReader reader = DirectoryReader.open(directory);
         //6. 创建搜索对象

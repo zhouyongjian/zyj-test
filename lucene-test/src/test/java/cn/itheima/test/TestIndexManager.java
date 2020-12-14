@@ -1,5 +1,6 @@
 package cn.itheima.test;
 
+import com.zyj.conts.Constants;
 import com.zyj.dao.SkuDao;
 import com.zyj.dao.SkuDaoImpl;
 import com.zyj.pojo.Sku;
@@ -92,7 +93,7 @@ public class TestIndexManager {
 //        Analyzer analyzer = new IKAnalyzer();
         Analyzer analyzer = new StandardAnalyzer();
         //4. 创建Directory目录对象, 目录对象表示索引库的位置
-        Directory  dir = FSDirectory.open(Paths.get("/Users/mfhj-dz-001-506/lucenedata"));
+        Directory  dir = FSDirectory.open(Paths.get(Constants.ES_DIR));
         //5. 创建IndexWriterConfig对象, 这个对象中指定切分词使用的分词器
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
         //6. 创建IndexWriter输出流对象, 指定输出的位置和使用的config初始化对象
@@ -126,7 +127,7 @@ public class TestIndexManager {
         //3. 创建分词器, StandardAnalyzer标准分词器, 对英文分词效果好, 对中文是单字分词, 也就是一个字就认为是一个词.
         Analyzer analyzer = new StandardAnalyzer();
         //4. 创建Directory目录对象, 目录对象表示索引库的位置
-        Directory  dir = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory  dir = FSDirectory.open(Paths.get(Constants.ES_DIR));
         //5. 创建IndexWriterConfig对象, 这个对象中指定切分词使用的分词器
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
         //6. 创建IndexWriter输出流对象, 指定输出的位置和使用的config初始化对象
@@ -149,7 +150,7 @@ public class TestIndexManager {
         //3. 创建分词器, StandardAnalyzer标准分词器, 对英文分词效果好, 对中文是单字分词, 也就是一个字就认为是一个词.
         Analyzer analyzer = new StandardAnalyzer();
         //4. 创建Directory目录对象, 目录对象表示索引库的位置
-        Directory  dir = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory  dir = FSDirectory.open(Paths.get(Constants.ES_DIR));
         //5. 创建IndexWriterConfig对象, 这个对象中指定切分词使用的分词器
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
         //6. 创建IndexWriter输出流对象, 指定输出的位置和使用的config初始化对象
@@ -200,7 +201,7 @@ public class TestIndexManager {
         //3. 创建分词器, StandardAnalyzer标准分词器, 对英文分词效果好, 对中文是单字分词, 也就是一个字就认为是一个词.
         Analyzer analyzer = new StandardAnalyzer();
         //4. 创建Directory目录对象, 目录对象表示索引库的位置
-        Directory  dir = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory  dir = FSDirectory.open(Paths.get(Constants.ES_DIR));
         //5. 创建IndexWriterConfig对象, 这个对象中指定切分词使用的分词器
         /**
          * 没有优化 小100万条数据, 创建索引需要7725ms

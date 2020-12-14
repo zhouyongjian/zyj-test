@@ -1,5 +1,6 @@
 package cn.itheima.test;
 
+import com.zyj.conts.Constants;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.cjk.CJKAnalyzer;
 import org.apache.lucene.analysis.core.SimpleAnalyzer;
@@ -31,7 +32,7 @@ public class TestAnalyzer {
         Analyzer analyzer = new WhitespaceAnalyzer();
 
         // 2. 创建Directory对象,声明索引库的位置
-        Directory directory = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory directory = FSDirectory.open(Paths.get(Constants.ES_DIR));
 
         // 3. 创建IndexWriteConfig对象，写入索引需要的配置
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
@@ -58,7 +59,7 @@ public class TestAnalyzer {
         Analyzer analyzer = new SimpleAnalyzer();
 
         // 2. 创建Directory对象,声明索引库的位置
-        Directory directory = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory directory = FSDirectory.open(Paths.get(Constants.ES_DIR));
 
         // 3. 创建IndexWriteConfig对象，写入索引需要的配置
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
@@ -114,7 +115,7 @@ public class TestAnalyzer {
 
         Analyzer analyzer = new StandardAnalyzer();
         // 2. 创建Directory对象,声明索引库的位置
-        Directory directory = FSDirectory.open(Paths.get("E:\\dir"));
+        Directory directory = FSDirectory.open(Paths.get(Constants.ES_DIR));
 
         // 3. 创建IndexWriteConfig对象，写入索引需要的配置
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
