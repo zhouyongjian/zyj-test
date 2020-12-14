@@ -4,6 +4,7 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.cjk.CJKAnalyzer;
 import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.TextField;
@@ -12,7 +13,6 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.junit.Test;
-import org.wltea.analyzer.lucene.IKAnalyzer;
 
 import java.nio.file.Paths;
 
@@ -110,8 +110,9 @@ public class TestAnalyzer {
     @Test
     public void TestIKAnalyzer() throws Exception{
         // 1. 创建分词器,分析文档，对文档进行分词
-        Analyzer analyzer = new IKAnalyzer();
+//        Analyzer analyzer = new IKAnalyzer();
 
+        Analyzer analyzer = new StandardAnalyzer();
         // 2. 创建Directory对象,声明索引库的位置
         Directory directory = FSDirectory.open(Paths.get("E:\\dir"));
 

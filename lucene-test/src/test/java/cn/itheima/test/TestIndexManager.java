@@ -88,20 +88,21 @@ public class TestIndexManager {
             //将文档对象放入到文档集合中
             docList.add(document);
         }
-//        //3. 创建分词器, StandardAnalyzer标准分词器, 对英文分词效果好, 对中文是单字分词, 也就是一个字就认为是一个词.
+        //3. 创建分词器, StandardAnalyzer标准分词器, 对英文分词效果好, 对中文是单字分词, 也就是一个字就认为是一个词.
 //        Analyzer analyzer = new IKAnalyzer();
-//        //4. 创建Directory目录对象, 目录对象表示索引库的位置
-//        Directory  dir = FSDirectory.open(Paths.get("E:\\dir"));
-//        //5. 创建IndexWriterConfig对象, 这个对象中指定切分词使用的分词器
-//        IndexWriterConfig config = new IndexWriterConfig(analyzer);
-//        //6. 创建IndexWriter输出流对象, 指定输出的位置和使用的config初始化对象
-//        IndexWriter indexWriter = new IndexWriter(dir, config);
-//        //7. 写入文档到索引库
-//        for (Document doc : docList) {
-//            indexWriter.addDocument(doc);
-//        }
-//        //8. 释放资源
-//        indexWriter.close();
+        Analyzer analyzer = new StandardAnalyzer();
+        //4. 创建Directory目录对象, 目录对象表示索引库的位置
+        Directory  dir = FSDirectory.open(Paths.get("/Users/mfhj-dz-001-506/lucenedata"));
+        //5. 创建IndexWriterConfig对象, 这个对象中指定切分词使用的分词器
+        IndexWriterConfig config = new IndexWriterConfig(analyzer);
+        //6. 创建IndexWriter输出流对象, 指定输出的位置和使用的config初始化对象
+        IndexWriter indexWriter = new IndexWriter(dir, config);
+        //7. 写入文档到索引库
+        for (Document doc : docList) {
+            indexWriter.addDocument(doc);
+        }
+        //8. 释放资源
+        indexWriter.close();
     }
 
     /**

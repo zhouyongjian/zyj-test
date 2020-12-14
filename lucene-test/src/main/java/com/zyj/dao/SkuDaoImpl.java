@@ -28,7 +28,7 @@ public class SkuDaoImpl implements SkuDao {
             // 加载数据库驱动
             Class.forName("com.mysql.jdbc.Driver");
             // 连接数据库
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/lucene", "root", "admin");
+            connection = DriverManager.getConnection("jdbc:mysql://172.16.22.169:3306/lucene", "root", "beebank");
 
             // SQL语句
             String sql = "SELECT * FROM tb_sku";

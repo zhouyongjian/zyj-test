@@ -6,18 +6,14 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.IntPoint;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
-import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.junit.Test;
-import org.wltea.analyzer.lucene.IKAnalyzer;
 
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -210,8 +206,9 @@ public class TestSearch {
 
         //1. 创建分词器(对搜索的关键词进行分词使用)
         //注意: 分词器要和创建索引的时候使用的分词器一模一样
-        Analyzer analyzer = new IKAnalyzer();
+//        Analyzer analyzer = new IKAnalyzer();
 
+        Analyzer analyzer = new StandardAnalyzer();
         //需求: 不管是名称域还是品牌域或者是分类域有关于手机关键字的查询出来
         //查询的多个域名
         String[] fields = {"name", "categoryName", "brandName"};

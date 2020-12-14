@@ -3,6 +3,7 @@ package com.zyj.service;
 import com.zyj.pojo.ResultModel;
 import com.zyj.pojo.Sku;
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.IntPoint;
 import org.apache.lucene.index.DirectoryReader;
@@ -13,7 +14,6 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import org.wltea.analyzer.lucene.IKAnalyzer;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -39,7 +39,8 @@ public class SearchServiceImpl implements SearchService {
         //查询到多少条为止
         Integer end = page * PAGE_SIZE;
         //创建分词器
-        Analyzer analyzer = new IKAnalyzer();
+//        Analyzer analyzer = new IKAnalyzer();
+        Analyzer analyzer = new StandardAnalyzer();
         //创建组合查询对象
         BooleanQuery.Builder builder = new BooleanQuery.Builder();
 
