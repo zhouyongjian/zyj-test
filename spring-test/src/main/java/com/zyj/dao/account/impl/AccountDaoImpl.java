@@ -1,6 +1,6 @@
-package com.zyj.dao.impl;
+package com.zyj.dao.account.impl;
 
-import com.zyj.dao.IAccountDao;
+import com.zyj.dao.account.IAccountDao;
 import com.zyj.pojo.Account;
 import org.springframework.stereotype.Repository;
 

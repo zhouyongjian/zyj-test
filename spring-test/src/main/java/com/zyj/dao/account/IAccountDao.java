@@ -1,4 +1,4 @@
-package com.zyj.dao;
+package com.zyj.dao.account;
 
 import com.zyj.pojo.Account;
 
