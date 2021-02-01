@@ -14,7 +14,7 @@ public class ConnectionFactory {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://172.16.6.6", "root", "beebankInvoker");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/test?useSSL=false", "root", "123456");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
