@@ -12,10 +12,21 @@
     <bean id="person1" class="com.zyj.suns.basic.Person" ></bean>
     <bean id="user" class="com.zyj.suns.basic.User" ></bean>
 
+
     <bean id="conn" class="com.zyj.suns.factorybean.ConnectionFactoryBean">
         <property name="className" value="com.mysql.jdbc.Driver"/>
         <property name="password" value="beebankInvoker" />
         <property name="url" value="jdbc:mysql://172.16.6.6:3306/test" />
         <property name="username" value="root" />
     </bean>
+
+
+    <!-- 实例工厂 -->
+    <bean  id="connectionFactory" class="com.zyj.suns.factorybean.ConnectionFactory"/>
+    <bean id="conn1" factory-bean="connectionFactory" factory-method="getConnection" >
+    </bean>
+
+    <!-- 静态工厂 -->
+    <bean  id="conn2" class="com.zyj.suns.factorybean.StaticConnectionFactory" factory-method="getConnection"/>
+
 </beans>
