@@ -61,7 +61,7 @@ public class SpringTest {
             System.out.println(beanDefinitionName);
         }
 
-        System.out.println(ac.containsBeanDefinition("user"));// 是否存在指定id值得bean
+        System.out.println(ac.containsBeanDefinition("user"));// 是否存在指定id值得bean，不判断别名
         if (ac.containsBean("person")) {// 是否存在指定id值得bean
             System.out.println(true);
         }
