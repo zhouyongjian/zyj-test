@@ -3,7 +3,10 @@ package com.zyj;
 import com.zyj.config.MyConfigration;
 import com.zyj.pojo.User;
 import com.zyj.service.IAccountService;
+import com.zyj.suns.basic.Person;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * ApplicationContext ，在容器构建的时候，，创建对象采取的策略是立即加在，也就是说，只要读取完配置文件就创建配置文件中的实例对象
@@ -20,11 +23,15 @@ public class Client {
 //        System.out.println(accountService.getById(1));
 //
 //        ApplicationContext ac = new ClassPathXmlApplicationContext("spring/beans.xml");
-        AnnotationConfigApplicationContext acac = new AnnotationConfigApplicationContext(MyConfigration.class);
-        IAccountService accountService1 = acac.getBean("accountService", IAccountService.class);
-        System.out.println(accountService1.getById(3));
-        System.out.println(accountService1.getUser(3));
+//        AnnotationConfigApplicationContext acac = new AnnotationConfigApplicationContext(MyConfigration.class);
+//        IAccountService accountService1 = acac.getBean("accountService", IAccountService.class);
+//        System.out.println(accountService1.getById(3));
+//        System.out.println(accountService1.getUser(3));
 
+        ApplicationContext ac = new ClassPathXmlApplicationContext("spring/beans.xml");
+
+        Person person = (Person) ac.getBean("person");
+        System.out.println(person);
 
 
 //
