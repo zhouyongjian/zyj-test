@@ -8,6 +8,6 @@ public class UserDaoImpl  extends BaseDaoImpl <User> implements IUserDao {
 
     @Override
     public User getUser(int id) {
-        return new User(id,"test");
+        return new User(id,"factorybean");
     }
 }

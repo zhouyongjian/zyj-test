@@ -1,11 +1,11 @@
-//package com.zyj.dis.test;
+//package com.zyj.dis.factorybean;
 //
 //
 //import org.junit.Test;
 //import org.junit.runner.RunWith;
 //import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.test.context.junit4.SpringRunner;
+//import org.springframework.boot.factorybean.context.SpringBootTest;
+//import org.springframework.factorybean.context.junit4.SpringRunner;
 //import redis.clients.jedis.Jedis;
 //
 //@RunWith(SpringRunner.class)
@@ -17,7 +17,7 @@
 //
 //    @Test
 //    public void testpring(){
-//        String test = jedis.get("test");
-//        System.out.println(test);
+//        String factorybean = jedis.get("factorybean");
+//        System.out.println(factorybean);
 //    }
 //}

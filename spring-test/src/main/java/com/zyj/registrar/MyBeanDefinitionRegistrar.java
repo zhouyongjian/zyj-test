@@ -1,4 +1,4 @@
-package com.zyj.refistrar;
+package com.zyj.registrar;
 
 import com.zyj.dao.user.impl.UserDaoImpl;
 import com.zyj.postprocessor.MyFactoryBean;
