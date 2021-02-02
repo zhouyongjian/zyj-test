@@ -1,15 +1,19 @@
-package com.zyj.suns.life;
+package com.zyj.suns.beanpost;
 
+import com.zyj.suns.life.Product;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class LifeTest {
+public class BPPTest {
 
+    /**
+     * 测试beanPosstProcessor
+     */
     @Test
     public void test(){
         ClassPathXmlApplicationContext atc = new ClassPathXmlApplicationContext("/spring/beans.xml");
-        Product product = atc.getBean("product", Product.class);
-        System.out.println(product);
+        Categroy c = atc.getBean("c", Categroy.class);
+        System.out.println(c);
         atc.close();
     }
 }

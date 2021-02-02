@@ -8,29 +8,38 @@
     <!--   &lt;!&ndash; 告知spring在创建容器时要扫描的包 &ndash;&gt;-->
     <!--    <context:component-scan base-package="com.zyj"></context:component-scan>-->
 
-    <bean id="person" class="com.zyj.suns.basic.Person" name="person2"></bean>
-    <bean id="person1" class="com.zyj.suns.basic.Person" ></bean>
-    <bean id="user" class="com.zyj.suns.basic.User" ></bean>
+<!--    <bean id="person" class="com.zyj.suns.basic.Person" name="person2"></bean>-->
+<!--    <bean id="person1" class="com.zyj.suns.basic.Person" ></bean>-->
+<!--    <bean id="user" class="com.zyj.suns.basic.User" ></bean>-->
 
 
-    <bean id="conn" class="com.zyj.suns.factorybean.ConnectionFactoryBean">
-        <property name="className" value="com.mysql.jdbc.Driver"/>
-        <property name="password" value="123456" />
-        <property name="url" value="jdbc:mysql://localhost:3306/test?useSSL=false" />
-        <property name="username" value="root" />
-    </bean>
+<!--    <bean id="conn" class="com.zyj.suns.factorybean.ConnectionFactoryBean">-->
+<!--        <property name="className" value="com.mysql.jdbc.Driver"/>-->
+<!--        <property name="password" value="123456" />-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/test?useSSL=false" />-->
+<!--        <property name="username" value="root" />-->
+<!--    </bean>-->
 
 
     <!-- 实例工厂 -->
-    <bean  id="connectionFactory" class="com.zyj.suns.factorybean.ConnectionFactory"/>
-    <bean id="conn1" factory-bean="connectionFactory" factory-method="getConnection"/>
+<!--    <bean  id="connectionFactory" class="com.zyj.suns.factorybean.ConnectionFactory"/>-->
+<!--    <bean id="conn1" factory-bean="connectionFactory" factory-method="getConnection"/>-->
 
 
     <!-- 静态工厂 -->
-    <bean  id="conn2" class="com.zyj.suns.factorybean.StaticConnectionFactory" factory-method="getConnection"/>
+<!--    <bean  id="conn2" class="com.zyj.suns.factorybean.StaticConnectionFactory" factory-method="getConnection"/>-->
 
-    <bean id="product" class="com.zyj.suns.life.Product"  init-method="myInit"/>
+    <bean id="product" class="com.zyj.suns.life.Product"  init-method="myInit" destroy-method="myDestroy">
+        <property name="name" value="zyj"/>
+    </bean>
     <!--<bean id="product" class="com.zyj.suns.life.Product" lazy-init="true"/>-->
     <!--<bean id="product" class="com.zyj.suns.life.Product" scope="prototype"/>-->
+
+    <bean id="c" class="com.zyj.suns.beanpost.Categroy" >
+        <property name="name" value="xjj" />
+        <property name="id" value="10" />
+    </bean>
+
+    <bean id="myBeanPostProcessor" class="com.zyj.suns.beanpost.MyBeanPostProcessor" />
 
 </beans>

@@ -1,11 +1,28 @@
 package com.zyj.suns.life;
 
 
+import lombok.ToString;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class Product implements InitializingBean {
+import javax.annotation.PreDestroy;
+
+@ToString
+public class Product implements InitializingBean, DisposableBean {
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        System.out.println("Product.setName");
+        this.name = name;
+    }
+
     public Product() {
-        System.out.printf("Product.Product");
+        System.out.println("Product.Product");
     }
 
     @Override
@@ -15,5 +32,13 @@ public class Product implements InitializingBean {
 
     public void myInit(){
         System.out.println("Product.myInit");
+    }
+    public void myDestroy() throws Exception{
+        System.out.println("Product.myDestroy");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("Product.destroy");
     }
 }
