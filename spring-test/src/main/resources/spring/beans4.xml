@@ -10,18 +10,13 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.2.xsd
 http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
-    <bean id="ruleService" class="com.zyj.suns.proxy.RuleServiceImpl"/>
-    <bean id="arround" class="com.zyj.suns.dynamic.Arround"/>
-<!--    <bean id="before" class="com.zyj.suns.dynamic.Before" > </bean>-->
+    <!--    spring 整合 mybatis-->
 
+<!--    <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">-->
+<!--        <context:property-placeholder />-->
+<!--    </bean>-->
 
-    <aop:config proxy-target-class="true">
-        <aop:pointcut id="pc" expression="execution(* *(..))" />
-        <aop:advisor advice-ref="arround" pointcut-ref="pc"/>
-    </aop:config>
-    <!-- 告知Spring基于注解进行AOP编程
-        proxy-target-class="false"  jdk
-        proxy-target-class="true"   cglib
-    -->
-    <aop:aspectj-autoproxy  proxy-target-class="true"/>
+<!--    <bean class="org.apache.ibatis.session.defaults.DefaultSqlSessionFactory">-->
+
+<!--    </bean>-->
 </beans>

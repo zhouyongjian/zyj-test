@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zyj.suns.mybatis.UserDAO">
+
+    <!--
+    create table t_users(
+        id int PRIMARY KEY auto_increment,
+        name VARCHAR(12),
+    password VARCHAR(12)
+    )
+    -->
+    <insert id="save" parameterType="user">
+        insert into t_users(name, password) values (#{name}, #{password});
+    </insert>
+</mapper>

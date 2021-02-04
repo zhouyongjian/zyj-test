@@ -21,7 +21,7 @@ public class MyFactoryBean implements FactoryBean {
 
     @Override
     public Object getObject() throws Exception {
-//        Object o = Proxy.newProxyInstance(MyFactoryBean.class.getClassLoader(), new Class[]{mapper}, new InvocationHandler() {
+//        Object o = Proxy.newProxyInstance(MyFactoryBean.class.getClassLoader(), new Class[]{dao}, new InvocationHandler() {
 //            @Override
 //            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 //                return proxy;

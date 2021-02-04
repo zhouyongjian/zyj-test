@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tool="http://www.springframework.org/schema/tool"
+       xmlns:context ="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:mysql.properties" />
+    <!--    连接池     -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >
+        <property name="driverClassName" value="${className}"/>
+        <property name="password" value="${password}" />
+        <property name="url" value="${url}" />
+        <property name="username" value="${username}" />
+    </bean>
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="typeAliasesPackage" value="com.zyj.springmybatis.entity"/>
+        <property name="mapperLocations">
+            <list>
+                <value>classpath:com.zyj.springmybatis.mapper/*Mapper.xml</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" id="scanner">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean" />
+        <property name="basePackage" value="com.zyj.springmybatis.dao" />
+    </bean>
+
+</beans>
