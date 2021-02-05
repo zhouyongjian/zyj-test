@@ -1,21 +1,22 @@
 package com.zyj.springmybatis;
 
-import com.zyj.springmybatis.dao.UserDAO;
+import com.zyj.springmybatis.dao.service.Userservice;
 import com.zyj.springmybatis.entity.User;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Test {
+public class MybatisTest {
 
-    @org.junit.Test
+    @Test
     public void test(){
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/applicationContext.xml");
 
-        UserDAO userDAO = ctx.getBean("userDAO", UserDAO.class);
+        Userservice userDAO = ctx.getBean("userService", Userservice.class);
         User user = new User();
-        user.setName("hh");
+        user.setName("wangwu");
 
-        user.setPassword("pwd");
-        userDAO.save(user);
+        user.setPassword("3434343");
+        userDAO.register(user);
     }
 }
