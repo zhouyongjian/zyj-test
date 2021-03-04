@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
+    @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         BeanDefinition accountService1 = beanFactory.getBeanDefinition("accountService");
        beanFactory.registerSingleton("testUser", new User(1,"zyj"));// 此时还没有bean创建

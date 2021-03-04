@@ -1,12 +1,10 @@
 package com.zyj.sys;
 
 import com.zyj.suns.life.Product;
-import oracle.jvm.hotspot.jfr.Producer;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 
 public class SpringClient {
