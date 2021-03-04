@@ -1,6 +1,7 @@
 package com.zyj.condition;
 
 import com.zyj.config.MyConfigration4Condition;
+import com.zyj.pojo.Color;
 import com.zyj.pojo.SystemName;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -13,8 +14,20 @@ public class ConditionTest {
 
 
     @Test
-    public void test(){
+    public void test02(){
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        String[] beanNamesForType = beanDefinitionNames;
+
+        for (String s : beanNamesForType) {
+            System.out.println(s);
+        }
+
+    }
+
+    @Test
+    public void test01(){
         String[] beanNamesForType = applicationContext.getBeanNamesForType(SystemName.class);
+
         for (String s : beanNamesForType) {
             System.out.println(s);
         }
