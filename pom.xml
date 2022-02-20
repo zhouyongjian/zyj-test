@@ -15,7 +15,12 @@
         <module>dis-lock-test</module>
         <module>es-test</module>
         <module>spring-test</module>
+        <module>kafka-test</module>
         <module>lucene-test</module>
+        <module>springboot-test</module>
+        <module>spring-mybatis-test</module>
+        <module>spring-annotation-test</module>
+        <module>luceneDemo</module>
     </modules>
 
     <parent>
