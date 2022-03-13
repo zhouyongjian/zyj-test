@@ -21,6 +21,7 @@
         <module>spring-mybatis-test</module>
         <module>spring-annotation-test</module>
         <module>luceneDemo</module>
+        <module>mq-test</module>
     </modules>
 
     <parent>
