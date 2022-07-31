@@ -19,13 +19,13 @@
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
-            <version>7.8.0</version>
+            <version>7.6.2</version>
         </dependency>
         <!-- elasticsearch的客户端 -->
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>elasticsearch-rest-high-level-client</artifactId>
-            <version>7.8.0</version>
+            <version>7.6.2</version>
         </dependency>
         <!-- elasticsearch依赖2.x的log4j -->
         <dependency>
@@ -40,8 +40,18 @@
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version> 2.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.9</version>
+            <version> 2.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version> 2.9.9</version>
         </dependency>
         <!-- junit单元测试 -->
         <dependency>
