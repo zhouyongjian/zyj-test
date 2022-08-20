@@ -8,7 +8,7 @@
     <context:property-placeholder location="classpath:mysql.properties" />
     <!--    连接池     -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >
-        <property name="driverClassName" value="${className}"/>
+        <property name="driverClassName" value=" ${className}"/>
         <property name="password" value="${password}" />
         <property name="url" value="${url}" />
         <property name="username" value="${username}" />

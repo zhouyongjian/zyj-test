@@ -24,7 +24,7 @@ public class NIOServer {
                 Iterator<SelectionKey> iterator = selectionKeys.iterator();
                 while (iterator.hasNext()){
                     SelectionKey key = iterator.next();
-                    iterator.remove();
+
                     if (key.isAcceptable()){
                         ServerSocketChannel ssc = (ServerSocketChannel)key.channel();
                         System.out.println("服务者 = " + ssc.hashCode());
