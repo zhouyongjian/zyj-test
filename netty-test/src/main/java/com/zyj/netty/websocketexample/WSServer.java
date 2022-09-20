@@ -12,7 +12,7 @@ public class WSServer {
 
     public static void main(String[] args)throws Exception {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
-        EventLoopGroup  workerGroup = new NioEventLoopGroup();
+        EventLoopGroup  workerGroup = new NioEventLoopGroup(3);
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class).handler(new LoggingHandler(LogLevel.INFO));

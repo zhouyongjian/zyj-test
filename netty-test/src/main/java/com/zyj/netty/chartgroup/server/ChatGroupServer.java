@@ -10,6 +10,8 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 
 /**
  * 群聊服务端
@@ -26,6 +28,7 @@ public class ChatGroupServer {
             ServerBootstrap server = new ServerBootstrap();
             server.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class) // 设置channel类型，为服务端channerl
                     .option(ChannelOption.SO_BACKLOG , 1024).childOption(ChannelOption.SO_KEEPALIVE, true)
+                    .handler(new LoggingHandler(LogLevel.INFO))
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {

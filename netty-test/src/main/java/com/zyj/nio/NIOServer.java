@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class NIOServer {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         ServerSocketChannel open = ServerSocketChannel.open();
         Selector selector = Selector.open();
         open.socket().bind( new InetSocketAddress(6666));
@@ -19,7 +19,7 @@ public class NIOServer {
         open.register(selector, SelectionKey.OP_ACCEPT);
         System.out.println("服务者 = " + open.hashCode());
         while (true){
-            if (selector.select(1000) > 0){
+            if (selector.select() > 0){
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
                 Iterator<SelectionKey> iterator = selectionKeys.iterator();
                 while (iterator.hasNext()){
@@ -39,7 +39,9 @@ public class NIOServer {
                         System.out.println("可读客户端建立连接了" + channel.hashCode());
                         ByteBuffer attachment = (ByteBuffer)key.attachment();// mark
                         channel.read(attachment);
-                        System.out.println("msg = " + new String(attachment.array()));
+                        System.out.println("msg = " + new String(attachment.array(),"utf-8"));
+                        Thread.currentThread().sleep(5000);
+                        channel.write(ByteBuffer.wrap("123".getBytes()));//空轮训
                     }
                     iterator.remove();
                 }

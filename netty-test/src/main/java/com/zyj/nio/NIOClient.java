@@ -14,11 +14,11 @@ public class NIOClient {
                 System.out.println("客户端没有建立连接，连接中、、、、");
             }
         }
-        String str = "12335435affdasfadsf";
+        String str = "123";
         socketChannel.write(ByteBuffer.wrap(str.getBytes()));
         ByteBuffer bf = ByteBuffer.allocate(1024);
         socketChannel.read(bf);
-        System.out.println(new String(bf.array()));
+        System.out.println("456" + new String(bf.array()));
         System.in.read();
     }
 }
